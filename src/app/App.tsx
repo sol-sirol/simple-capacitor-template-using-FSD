@@ -1,40 +1,22 @@
-import { useEffect, useRef } from "react";
-import { f7, f7ready, App as RootApp, View } from "framework7-react";
 import { Capacitor } from "@capacitor/core";
 import { Network } from "@capacitor/network";
-import { ErrorBoundary } from "shared/ui/error-boundary";
+import { App as RootApp, View, f7, f7ready } from "framework7-react";
+import { useEffect, useRef } from "react";
 import {
   addHapticListeners,
   handleBackButton,
   handleKeyboard,
   toast,
 } from "shared/lib/f7-helpers";
-
-import { HomePage } from "pages/home";
-import { ProfilePage } from "pages/profile";
+import { ErrorBoundary } from "shared/ui/error-boundary";
 import { UpdateModal } from "shared/ui/update-modals";
-import { MainPage } from "pages/main/ui/main-page";
+import { routes } from "./routes";
 
 declare global {
   interface Window {
     inDev: () => void;
   }
 }
-
-const routes = [
-  {
-    path: "/home",
-    component: HomePage,
-  },
-  {
-    path: "/main",
-    component: MainPage,
-  },
-  {
-    path: "/profile",
-    component: ProfilePage,
-  },
-];
 
 const f7params = {
   name: "NameApp",

@@ -1,0 +1,12 @@
+/*Фикс выделения текста при long tap на Android и частично для iOS*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "reset";
+@import "fonts";
+@import "lib";
+@import "redefinitionF7";
+@import "global";
+@import "pages";

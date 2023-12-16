@@ -1,0 +1,69 @@
+html,
+body,
+#root {
+  // overflow: hidden !important;
+  // transition: height 0.15s;
+  // font-family: "Roboto";
+  // color: #333;
+}
+
+:root {
+}
+
+* {
+  // --f7-navbar-height: 48px;
+  // --f7-navbar-link-height: 48px;
+
+  // --f7-page-bg-color: #fff;
+
+  // --f7-theme-color: #0bc020;
+  // --f7-theme-color-rgb: 11, 193, 32;
+  // --f7-theme-color-shade: #069815;
+  // --f7-theme-color-tint: #45ca06;
+}
+
+.md {
+  // --f7-navbar-height: 48px;
+}
+
+.ios {
+  // --f7-navbar-height: 64px;
+}
+
+// TODO: Убрать не корректные примеры из стилей
+// .navbar {
+//   .navbar-bg {
+//     background-color: transparent;
+//     backdrop-filter: none;
+
+//     &::after {
+//       display: none;
+//     }
+//   }
+// }
+
+// .icon-back:after {
+//   content: "" !important;
+//   background: url("../../shared/assets/images/back-icon.svg");
+//   width: 22px;
+//   height: 20px;
+// }
+// .icon.icon-back {
+//   width: 22px;
+//   height: 20px;
+// }
+
+// .button {
+//   --f7-button-height: 32px;
+//   --f7-button-border-radius: 8px;
+//   --f7-button-font-size: 14px;
+//   --f7-button-font-weight: 400;
+//   --f7-button-text-transform: "initial";
+
+//   font-feature-settings: "clig" off, "liga" off;
+// }
+// .button-large {
+//   --f7-button-height: 48px;
+//   --f7-button-font-size: 18px;
+//   --f7-button-font-weight: 500;
+// }
