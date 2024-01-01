@@ -11,6 +11,7 @@ import { useState } from "react";
 import { LoadScreen, toast } from "shared/lib/f7-helpers";
 import { bitcoinToString } from "../utils/bitcoin-to-string";
 import { CryptocurrencyStore } from "entities/viewer";
+import { twMerge } from "tailwind-merge";
 
 export const DepositBitcoinBlock = ({ className, ...props }: ButtonProps) => {
   const [value, setValue] = useState<string>("5");

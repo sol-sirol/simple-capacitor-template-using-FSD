@@ -5,7 +5,7 @@ import { DepositBitcoinBlock } from "features/deposit-bitcoin";
 
 export const ProfilePage = observer(() => {
   return (
-    <Page name="profile">
+    <Page>
       <Navbar title="My Profile" />
       <div className="flex items-center justify-between p-4">
         <div>Здравствуй!</div>
@@ -13,7 +13,6 @@ export const ProfilePage = observer(() => {
       </div>
 
       <ViewerAccount></ViewerAccount>
-
 
       <DepositBitcoinBlock></DepositBitcoinBlock>
     </Page>
