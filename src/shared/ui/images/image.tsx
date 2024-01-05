@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import React, { HTMLAttributes, useState } from "react";
 import { SkeletonBlock } from "skeleton-elements/react";
+
 import classNames from "./style.module.css";
 
-type Props = {
-  style?: React.CSSProperties;
+interface Props extends HTMLAttributes<HTMLDivElement> {
   imageStyle?: React.CSSProperties;
-  onClick?: (e?: React.MouseEvent<HTMLElement>) => void;
   onLoad?: () => void;
-  height?: string | number;
-  width?: string | number;
-  fillColor?: string;
-  className?: string;
+  height?: string;
+  width?: string;
   size?: string;
   image?: string;
   backgroundColor?: string;
   imageClassName?: string;
-  loader?: boolean;
-  children?: React.ReactNode;
-};
+}
 
-export const Image = (props: Props) => {
+export const Image = ({
+  imageClassName,
+  width,
+  height,
+  image,
+  size,
+  style,
+  imageStyle,
+  backgroundColor,
+  ...props
+}: Props) => {
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const onLoad = () => {
@@ -29,27 +34,8 @@ export const Image = (props: Props) => {
     }
   };
 
-  const onClick = (e: React.MouseEvent<HTMLElement>) => {
-    if (props.onClick) props.onClick(e);
-  };
-
-  const {
-    className,
-    imageClassName,
-    width,
-    height,
-    image,
-    size,
-    style,
-    imageStyle,
-    backgroundColor,
-    loader,
-  } = props;
   return (
     <div
-      {...props}
-      onClick={onClick}
-      className={className}
       style={{
         position: "relative",
         width,
@@ -57,19 +43,18 @@ export const Image = (props: Props) => {
         ...style,
         overflow: "hidden",
       }}
+      {...props}
     >
       {!loaded && (
         <div style={{ backgroundColor }} className={classNames.placeholder}>
-          {loader && (
-            <SkeletonBlock
-              //@ts-ignore
-              width={width}
-              //@ts-ignore
-              height={height}
-              effect="blink"
-              style={{ position: "relative", ...imageStyle }}
-            />
-          )}
+          <SkeletonBlock
+            width={"100%"}
+            height={"100%"}
+            effect="blink"
+            style={{ position: "relative", ...imageStyle }}
+            tag="div"
+            borderRadius="0px"
+          />
         </div>
       )}
       {image && (

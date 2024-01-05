@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 
 export const useScroll = (
   parentRef: MutableRefObject<HTMLElement | null>,

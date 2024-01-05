@@ -1,10 +1,8 @@
-import {
-  MutableRefObject,
-  useEffect,
-  useState,
-} from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
-export const useHover = <T extends MutableRefObject<HTMLElement | null>>(ref: T) => {
+export const useHover = <T extends MutableRefObject<HTMLElement | null>>(
+  ref: T
+) => {
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const on = () => {

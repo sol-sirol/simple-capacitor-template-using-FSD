@@ -1,26 +1,20 @@
-import React from "react";
+import { HTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
 
-type Props = {
-  style: React.CSSProperties;
+interface Props extends HTMLAttributes<HTMLDivElement> {
   text?: string;
-  className?: string;
-  [key: string]: any;
-};
+}
 
-export const Empty = ({ style, text, className, ...props }: Props) => {
+export const Empty = ({ text = "Список пуст", className, ...props }: Props) => {
   return (
     <div
-      style={{ width: "100%", height: "100%", ...style }}
-      className={`display-flex justify-content-center align-items-center ${className}`}
+      className={twMerge(
+        "w-full h-full flex justify-center items-center",
+        className,
+      )}
       {...props}
     >
       {text}
     </div>
   );
-};
-
-Empty.defaultProps = {
-  style: {},
-  text: "Список пуст",
-  className: "",
 };

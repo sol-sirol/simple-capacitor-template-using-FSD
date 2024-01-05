@@ -1,12 +1,16 @@
-import React from "react";
 import { BlockTitle, Button } from "framework7-react";
+import React from "react";
+
 import styles from "./style.module.scss";
 
 interface State {
   hasError: boolean;
-};
+}
+interface Props {
+  children: React.ReactNode;
+}
 
-export class ErrorBoundary extends React.Component {
+export class ErrorBoundary extends React.Component<Props> {
   state: State = { hasError: false };
 
   componentDidMount() {
@@ -52,7 +56,6 @@ export class ErrorBoundary extends React.Component {
       );
     }
 
-    //@ts-ignore
     return this.props.children;
   }
 }
