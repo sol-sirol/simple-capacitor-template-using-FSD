@@ -6,8 +6,8 @@ import classNames from "./style.module.css";
 interface Props extends HTMLAttributes<HTMLDivElement> {
   imageStyle?: React.CSSProperties;
   onLoad?: () => void;
-  height?: string;
-  width?: string;
+  height?: string | number;
+  width?: string | number;
   size?: string;
   image?: string;
   backgroundColor?: string;
