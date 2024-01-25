@@ -1,17 +1,17 @@
-import React, { HTMLAttributes, useState } from "react";
+import { CSSProperties, HTMLAttributes, useState } from "react";
 import { SkeletonBlock } from "skeleton-elements/react";
 
 import classNames from "./style.module.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  imageStyle?: React.CSSProperties;
-  onLoad?: () => void;
+  imageClassName?: string;
+  imageStyle?: CSSProperties;
+  backgroundColor?: string;
   height?: string | number;
   width?: string | number;
-  size?: string;
+  size?: CSSProperties["objectFit"];
   image?: string;
-  backgroundColor?: string;
-  imageClassName?: string;
+  onLoad?: () => void;
 }
 
 export const Image = ({
@@ -19,7 +19,7 @@ export const Image = ({
   width,
   height,
   image,
-  size,
+  size = "cover",
   style,
   imageStyle,
   backgroundColor,
@@ -58,22 +58,19 @@ export const Image = ({
         </div>
       )}
       {image && (
-        <React.Fragment>
-          <div
-            className={`${classNames.image} ${
-              !loaded && image ? classNames.loading : ""
-            } ${imageClassName}`}
-            style={{
-              backgroundSize: size,
-              backgroundImage: `url(${image})`,
-              backgroundColor,
-              ...imageStyle,
-            }}
-          >
-            {props.children}
-          </div>
-          <img alt="" src={image} onLoad={onLoad} style={{ display: "none" }} />
-        </React.Fragment>
+        <img
+          alt=""
+          src={image}
+          onLoad={onLoad}
+          className={imageClassName}
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: backgroundColor,
+            objectFit: size,
+            ...imageStyle,
+          }}
+        />
       )}
     </div>
   );

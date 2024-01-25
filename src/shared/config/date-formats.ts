@@ -1,0 +1,2 @@
+export const PROFILE_DATE_FORMAT = "DD/MM/YYYY"
+export const SEARCH_DATE_FORMAT = "DD.MM.YYYY"
