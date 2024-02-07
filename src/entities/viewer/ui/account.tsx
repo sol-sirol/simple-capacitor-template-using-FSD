@@ -1,6 +1,6 @@
 import { Block, BlockFooter } from "framework7-react";
-import { observer } from "mobx-react";
-import { useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
 import { BitcoinIcon } from "shared/ui/icons";
 import { CryptocurrencyStore } from "../model/store";
 import { useGetPeakBitcoinValue } from "../hooks/useGetPeakBitcoinValue";

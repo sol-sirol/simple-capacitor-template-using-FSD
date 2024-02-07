@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import { Page, Navbar, PageContent } from "framework7-react";
 import { CapacitorUpdater } from "@capgo/capacitor-updater";
 import { Image } from "shared/ui/images";

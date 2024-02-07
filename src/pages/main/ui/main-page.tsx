@@ -1,4 +1,4 @@
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import { Page, View, Views } from "framework7-react";
 import { NavBar } from "widgets/navigation";
 

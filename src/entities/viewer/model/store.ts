@@ -1,4 +1,12 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, configure } from "mobx";
+
+configure({
+  enforceActions: "always",
+  computedRequiresReaction: true,
+  reactionRequiresObservable: true,
+  observableRequiresReaction: true,
+  disableErrorBoundaries: true
+})
 
 class store {
   constructor() {

@@ -1,5 +1,5 @@
 import { Page, Navbar } from "framework7-react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import { ViewerAccount, ViewerAvatar } from "entities/viewer";
 import { DepositBitcoinBlock } from "features/deposit-bitcoin";
 
